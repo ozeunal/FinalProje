@@ -45,7 +45,7 @@ ggplot(mpath, aes(x = average_rating, y = text_reviews_count, group = 1)) +
   labs(title = "Kitap Derecelendirmesi ve Yorum Sayısı", x = "Ortalama Puan", y = "Yorum Sayısı")
 ```
 
-Bu tablodan şu sonuçları çıkarabiliriz:
+- Bu tablodan şu sonuçları çıkarabiliriz:
 
 *Ortalama Değerlendirme Sayısı:* Kitapların ortalama olarak kaç kez değerlendirildiğini gösterir. Bu, kitapların popülaritesi veya ilgi gördüğü düzey hakkında bir fikir verir.
 
