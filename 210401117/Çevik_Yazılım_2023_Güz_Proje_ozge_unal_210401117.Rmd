@@ -1,0 +1,23 @@
+---
+title: 'Proje Rapor : Özge Ünal 210401117'
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(readr)
+library(knitr)
+library(ggplot2)
+library(dplyr)
+library(kableExtra)
+path <- "books.csv"
+mpath <- read_csv(path)
+```
+
+## Q1: Proje Tanımı
+
+---
+
+Şirketimiz *Turkuaz* kitap mağazasıdır.Kitap mağazamızın satış rakamları düşüştedir bu sebepten popüler, satış yapma olasılığı yüksek kitapları satması gerekmektedir.
