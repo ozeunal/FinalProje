@@ -157,3 +157,7 @@ ggplot(filtered_books, aes(x = average_rating)) +
 ```
 
 Bu kod parçası, filtered_books veri çerçevesindeki average_rating sütununu kullanarak bir histogram çizer. Histogram, kitapların ortalama derecelendirmelerinin frekanslarını gösterir. Her bir çubuk, belirli bir ortalama derecelendirmeye sahip kitapların sayısını temsil eder.
+
+## Q6: Veri analizi
+
+---
