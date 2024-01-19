@@ -111,3 +111,49 @@ mpath <- mpath[!is.na(mpath$average_rating), ]
 summary(mpath$average_rating)
 ```
 - Average_rating sütunundaki **NA** veriler temizlendi.
+
+## Q5: Veri Mühendisliği
+
+---
+
+Belirlediğimiz koşullara göre popüler kitapları listelemek için **filter()** fonksiyonunu kullandık.
+
+```
+  filter(average_rating > 3.93 & 
+         ratings_count > 17900 & 
+         text_reviews_count > 542)
+
+```
+
+Bu kod parçası, **mpath** veri setindeki **average_rating**, **ratings_count** ve **text_reviews_count** sütunlarına filtreler uygulayarak belirli bir koşulu sağlayan satırları seçer. Burada kullanılan filtreler şunlardır:
+
+- average_rating sütunu 3.93'ten büyük olmalıdır.
+- ratings_count sütunu 17900'den büyük olmalıdır.
+- text_reviews_count sütunu 542'den büyük olmalıdır.
+
+Sonuç olarak, bu filtreleri sağlayan ilk birkaç kitabın (eğer varsa) tüm sütunlarını içeren bir veri çerçevesi olan filtered_books oluşturulur. head(filtered_books) fonksiyonu ise bu veri çerçevesinin ilk birkaç satırını ekrana yazdırır. Bu sayede, filtreleri sağlayan bazı popüler kitapların verilerini görebiliriz.
+
+```{r, echo=FALSE}
+filtered_books <- mpath %>%
+  filter(average_rating > 3.93 & 
+         ratings_count > 17900 & 
+         text_reviews_count > 542)
+
+head(filtered_books)
+```
+
+Tabloda yer alan average_rating sütununun dağılımını görmek için bir histogram çizilebilir. Bu histogram, kitapların ortalama derecelendirmelerinin frekanslarını görselleştirecektir. Örneğin:
+
+
+```{r, echo=FALSE}
+library(ggplot2)
+
+ggplot(filtered_books, aes(x = average_rating)) +
+  geom_histogram(binwidth = 0.1, fill = "lightblue", color = "black") +
+  labs(title = "Average Ratings of Popular Books",
+       x = "Average Rating",
+       y = "Frequency") +
+  theme_minimal()
+```
+
+Bu kod parçası, filtered_books veri çerçevesindeki average_rating sütununu kullanarak bir histogram çizer. Histogram, kitapların ortalama derecelendirmelerinin frekanslarını gösterir. Her bir çubuk, belirli bir ortalama derecelendirmeye sahip kitapların sayısını temsil eder.
