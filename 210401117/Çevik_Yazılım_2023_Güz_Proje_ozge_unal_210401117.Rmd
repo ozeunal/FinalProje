@@ -34,3 +34,67 @@ Datasetindeki average_rating, ratings_count, text_reviews_count sütunları kull
 1. average_rating değeri 3.93'den büyük
 2. ratings_count değeri 17.9k büyük
 3. text_reviews_count 542'den büyük olan kitaplar satış olasılığı yüksek olarak belirlenecektir.
+
+## Q3: Veri Seti Keşifsel Analizi
+
+---
+
+```{r , echo=FALSE , warning=FALSE}
+ggplot(mpath, aes(x = average_rating, y = text_reviews_count, group = 1)) +
+  geom_line() +
+  labs(title = "Kitap Derecelendirmesi ve Yorum Sayısı", x = "Ortalama Puan", y = "Yorum Sayısı")
+```
+
+Bu tablodan şu sonuçları çıkarabiliriz:
+
+*Ortalama Değerlendirme Sayısı:* Kitapların ortalama olarak kaç kez değerlendirildiğini gösterir. Bu, kitapların popülaritesi veya ilgi gördüğü düzey hakkında bir fikir verir.
+
+*Ortalama Puan:* Kitapların ortalama derecelendirmesi. Bu, kitapların genel kalitesi veya okuyucuların kitaplar hakkındaki görüşleri hakkında bir fikir verebilir.
+
+*Toplam Kitap Sayısı:* Veri setindeki toplam kitap sayısı. Bu, analizde kullanılan veri setinin boyutu hakkında bilgi verir.
+
+*Ortalama Yorum Sayısı:* Kitapların ortalama olarak kaç kez yorumlandığını gösterir. Bu, kitapların ne kadar tartışıldığını veya okuyucuların kitaplar hakkında ne kadar konuştuklarını gösterebilir.
+
+---
+
+Bu bölümde veri setinin keşfi ve analizi yapılırken şu bilgileri içerecek şekilde bir yaklaşım benimsenebilir:
+
+- **Veri Setinin Toplanma Süreci:**
+
+[Goodreads](https://www.kaggle.com/datasets/jealousleopard/goodreadsbooks) web sitesinden alınan bir veri seti olduğunu belirtebiliriz ve readr::read_csv() fonksiyonu kullanılarak **`r class(mpath)[[1]]`** tipinde bir değişkene ithal edilmiştir.Veri boyutları aşağıdaki gibidir:
+
+- Satir sayisi : `r nrow(mpath)`
+- Sütun sayisi : `r ncol(mpath)`
+
+```{r pressure, echo=FALSE , warning=FALSE}
+
+summary_table <- mpath %>%
+  summarise(
+    avg_ratings = mean(ratings_count, na.rm = TRUE),
+    avg_average_rating = mean(average_rating, na.rm = TRUE),
+    total_books = n()
+  )
+
+kable(summary_table,
+      col.names = c("Ortalama Değerlendirme Sayısı", "Ortalama Puan", "Toplam Kitap Sayısı")) %>%
+  kable_styling()
+```
+
+- **Önemli Satırlar ve Sütunlar:**
+
+`average_rating`: Kitabın aldığı ortalama puan ne kadar başarılı-başarısız olduğunu gösterir.\
+`ratings_count`: İnceleme sayısı ne kadar popüler olduğunu gösterir.\
+`text_reviews_count`: Yorum sayısı (text_reviews_count) kitabın ne kadar tartışıldığını, hakkında konuşulduğunu gösterebilir.\
+
+Bu sütunlar veri analizi ve modellememiz için önemlidir. Örneğin, kitapların ortalama derecesi ve derece sayısı gibi özellikler, kitapların popülerliğini tahmin etmek için kullanılabilecek özelliklerdir. Yorum sayısı da kitabın etkileşim düzeyini belirlemede kullanılabilir.
+
+- **Veri Tipleri:**
+
+```{r, echo=FALSE}
+summary(mpath)
+```
+Veri setini incelediğimizde, problem çözümü için kullanacağımız sütunlardan **ratings_count** sütunda verilerin özel karakterler içerdiğini görüyoruz. Bu tür durumlarda, sütundaki verileri temizlemek ve istenmeyen karakterleri kaldırmak gerekir.
+
+- **Eksikler:**
+
+Kitap basım sayısı ve kitap türü sütunları eksik gösterilebilir. Örneğin, kitabın basım sayısı, kitabın ne kadar popüler olduğunu veya ne kadar çok satıldığını gösterirken, kitap türü ise kitabın içeriği ve hedef kitlesi hakkında bilgi verirdi. Bu bilgileri analiz ederek, hangi tür kitapların daha çok satıldığını veya hangi türlerin daha popüler olduğunu belirleyebilir ve bu bilgilere dayanarak gelecekteki kitap satışları veya pazarlama stratejileri için değerli içgörüler elde edebilirdik.
