@@ -161,3 +161,19 @@ Bu kod parçası, filtered_books veri çerçevesindeki average_rating sütununu 
 ## Q6: Veri analizi
 
 ---
+
+## Q7: Sonuç
+
+---
+
+Bu projede, *Goodreads* kitap veri setini analiz ettik ve kitapların derecelendirmeleri, değerlendirme sayıları ve inceleme sayıları üzerinde çeşitli analizler yaptık. Analizlerimiz sonucunda, yüksek derecelendirmeye sahip kitapların genellikle daha fazla değerlendirme ve incelemeye sahip olduğunu tespit ettik. 
+
+Bu sonuçlar, kitap yayıncıları ve satıcıları için değerli bir bilgi kaynağı olabilir. Yüksek derecelendirmeye sahip kitapların daha fazla ilgi gördüğü ve popüler türlerin daha çok satıldığı göz önüne alındığında, yayıncılar bu verileri kitap seçimi ve pazarlama stratejileri için kullanabilirler. Ayrıca, okuyucuların ilgi alanları ve tercihleri hakkında daha derinlemesine bilgi sahibi olmak için bu verileri kullanabilirler.
+
+Bu çalışmanın kuvvetli yanlarından biri, gerçek dünya verileri üzerinde yapılan analizlerin gerçekçi sonuçlar üretebilmesidir. Ancak, bazı zayıf yanlar da bulunmaktadır. Örneğin, veri setinde eksik veya hatalı veriler olabilir, bu da analiz sonuçlarını etkileyebilir. Ayrıca, veri setinin sınırlı olması da genelleme yapmayı zorlaştırabilir.
+
+Gelecekteki çalışmalar için önerilerimiz şunlardır:
+
+- Veri setinin daha geniş bir zaman aralığına yayılmasını sağlamak, böylece zaman içindeki trendleri analiz etmek mümkün olabilir.
+- Veri setindeki eksik veya hatalı verileri temizlemek ve daha güvenilir bir analiz yapmak için veri ön işleme - tekniklerini kullanmak.
+- Farklı makine öğrenimi modellerini kullanarak kitap satışlarını tahmin etmek veya kitap öneri sistemleri geliştirmek gibi daha karmaşık analizler yapmak.
