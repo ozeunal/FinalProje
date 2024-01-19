@@ -21,3 +21,16 @@ mpath <- read_csv(path)
 ---
 
 Şirketimiz *Turkuaz* kitap mağazasıdır.Kitap mağazamızın satış rakamları düşüştedir bu sebepten popüler, satış yapma olasılığı yüksek kitapları satması gerekmektedir.
+
+
+## Q2: Proje Amacı
+
+---
+
+Bu projede, bir kitap mağazasının satış performansını artırmak amacıyla veri odaklı bir strateji geliştirmek için [Goodreads](https://www.kaggle.com/datasets/jealousleopard/goodreadsbooks) veri setini analiz edeceğim. Bu analizde, kitapların değerlendirilme sayıları, ortalama puanları, yorum sayıları gibi faktörleri inceleyerek, hangi kitapların daha popüler olduğunu ve daha fazla satıldığını belirlemeyi hedefliyorum.\
+
+Datasetindeki average_rating, ratings_count, text_reviews_count sütunları kullanılarak;
+
+1. average_rating değeri 3.93'den büyük
+2. ratings_count değeri 17.9k büyük
+3. text_reviews_count 542'den büyük olan kitaplar satış olasılığı yüksek olarak belirlenecektir.
