@@ -98,3 +98,16 @@ Veri setini incelediğimizde, problem çözümü için kullanacağımız sütunl
 - **Eksikler:**
 
 Kitap basım sayısı ve kitap türü sütunları eksik gösterilebilir. Örneğin, kitabın basım sayısı, kitabın ne kadar popüler olduğunu veya ne kadar çok satıldığını gösterirken, kitap türü ise kitabın içeriği ve hedef kitlesi hakkında bilgi verirdi. Bu bilgileri analiz ederek, hangi tür kitapların daha çok satıldığını veya hangi türlerin daha popüler olduğunu belirleyebilir ve bu bilgilere dayanarak gelecekteki kitap satışları veya pazarlama stratejileri için değerli içgörüler elde edebilirdik.
+
+
+## Q4: Veri Seti Ön İşlemesi
+
+---
+
+### *- Average_rating Sütunu*
+
+```{r, echo=FALSE}
+mpath <- mpath[!is.na(mpath$average_rating), ]
+summary(mpath$average_rating)
+```
+- Average_rating sütunundaki **NA** veriler temizlendi.
